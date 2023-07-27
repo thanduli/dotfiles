@@ -129,13 +129,22 @@ require('lazy').setup({
     },
   },
 
-{
-  'ellisonleao/gruvbox.nvim',
+--{
+-- 'ellisonleao/gruvbox.nvim',
+-- priority = 1000,
+--config=function ()
+--   vim.cmd.colorscheme 'gruvbox' 
+--end,
+--},
+  { "ntk148v/habamax.nvim",
+    dependencies={ "rktjmp/lush.nvim" },
   priority = 1000,
   config=function ()
-    vim.cmd.colorscheme 'gruvbox' 
-end,
+    vim.cmd.colorscheme 'habamax'
+  end,
   },
+  {"xiyaowong/transparent.nvim"},
+
   {'junegunn/goyo.vim'},
 
   {
@@ -145,7 +154,8 @@ end,
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'gruvbox',
+        --theme = 'gruvbox',
+        theme = 'habamax',
         component_separators = '|',
         section_separators = '',
       },
@@ -516,4 +526,4 @@ vim.opt.spelllang = 'de'
 vim.keymap.set("i", "jj", "<Esc>")
 vim.keymap.set("n", "<leader>sp", ":set spell<CR>")
 vim.keymap.set("n", "<leader>gy", ":Goyo<CR>")
-vim.keymap.set("n", "<leader>r", ":!python %<CR>")
+vim.keymap.set("n", "<leader>r", ":!python3 %<CR>")
